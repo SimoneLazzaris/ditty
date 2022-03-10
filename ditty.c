@@ -148,7 +148,7 @@ static int check_dirty_pipe(const char *const path, loff_t offset, const char *c
 }
 
 const char *const test_string="Hello World!\n";
-const char *const test_file="/data/local/tmp/testfile.txt";
+const char *const test_file="/data/data/com.termux/home/testfile.txt";
 
 static int create_test_file(const char *const path) {
 	int fd=open(path, O_CREAT|O_WRONLY, 0444);
@@ -199,6 +199,6 @@ int main(int argc, char ** argv) {
 			printf("VULNERABLE!\n");
 			break;
 	}
-	unlink("/data/local/tmp/testfile.txt");
+	unlink("/data/data/com.termux/home/testfile.txt");
 	return 0;
 }
